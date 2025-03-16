@@ -1,64 +1,64 @@
 {
-  "name": "oj_compiler",
-  "version": "1.0.0",
-  "description": "oj_compiler",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "dev": "tsx --watch --env-file .env.dev src/index.ts",
-    "dev:prod": "tsx --watch --env-file .env.prod src/index.ts",
-    "start": "node --env-file .env.prod dist/src/index.js",
-    "type-check": "tsc --noEmit",
-    "build": "tsc -p tsconfig.build.json",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "test": "vitest",
-    "test:run": "vitest --run",
-    "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage",
-    "prepare": "husky"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/deekshith03/oj_compiler.git"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint",
-      "prettier --check"
-    ],
-    "*.{json,yml,yaml,md}": [
-      "prettier --check"
-    ]
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/deekshith03/oj_compiler/issues"
-  },
-  "homepage": "https://github.com/deekshith03/oj_compiler#readme",
-  "dependencies": {
-    "express": "^4.21.2"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.22.0",
-    "@tsconfig/node22": "^22.0.0",
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.13.10",
-    "@vitest/coverage-v8": "^3.0.8",
-    "@vitest/eslint-plugin": "^1.1.37",
-    "@vitest/ui": "^3.0.8",
-    "eslint": "^9.22.0",
-    "eslint-plugin-perfectionist": "^4.10.1",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
-    "prettier": "^3.5.3",
-    "tsx": "^4.19.3",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1",
-    "vitest": "^3.0.8"
-  }
+    "name": "oj_compiler",
+    "version": "1.0.0",
+    "description": "oj_compiler",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "tsx --watch --env-file .env.dev src/index.ts",
+        "dev:prod": "tsx --watch --env-file .env.prod src/index.ts",
+        "start": "node --env-file .env.prod dist/src/index.js",
+        "type-check": "tsc --noEmit",
+        "build": "tsc -p tsconfig.build.json",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix .",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "test": "vitest",
+        "test:run": "vitest --run",
+        "test:ui": "vitest --ui",
+        "coverage": "vitest run --coverage",
+        "prepare": "cd .. && husky server/.husky"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/deekshith03/oj_compiler.git"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint",
+            "prettier --check"
+        ],
+        "*.{json,yml,yaml,md}": [
+            "prettier --check"
+        ]
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/deekshith03/oj_compiler/issues"
+    },
+    "homepage": "https://github.com/deekshith03/oj_compiler#readme",
+    "dependencies": {
+        "express": "^4.21.2"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.22.0",
+        "@tsconfig/node22": "^22.0.0",
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.13.10",
+        "@vitest/coverage-v8": "^3.0.8",
+        "@vitest/eslint-plugin": "^1.1.37",
+        "@vitest/ui": "^3.0.8",
+        "eslint": "^9.22.0",
+        "eslint-plugin-perfectionist": "^4.10.1",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.5.0",
+        "prettier": "^3.5.3",
+        "tsx": "^4.19.3",
+        "typescript": "^5.8.2",
+        "typescript-eslint": "^8.26.1",
+        "vitest": "^3.0.8"
+    }
 }

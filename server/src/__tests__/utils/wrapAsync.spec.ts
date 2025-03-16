@@ -1,0 +1,36 @@
+import { NextFunction, Request, Response } from 'express';
+import { describe, expect, it, vi } from 'vitest';
+
+import catchAsync from '../../utils/wrapAsync.js';
+
+describe('catchAsync', () => {
+    it('should call next with error if the handler throws an error', async () => {
+        const req = {} as Request;
+        const res = {} as Response;
+        const next = vi.fn() as NextFunction;
+
+        const error = new Error('Test error');
+        const handler = vi.fn().mockRejectedValue(error);
+
+        const wrappedHandler = catchAsync(handler);
+
+        await wrappedHandler(req, res, next);
+
+        expect(next).toHaveBeenCalledWith(error);
+    });
+
+    it('should call the handler with req, res, and next', async () => {
+        const req = {} as Request;
+        const res = {} as Response;
+        const next = vi.fn() as NextFunction;
+
+        const handler = vi.fn().mockResolvedValue(undefined);
+
+        const wrappedHandler = catchAsync(handler);
+
+        await wrappedHandler(req, res, next);
+
+        expect(handler).toHaveBeenCalledWith(req, res, next);
+        expect(next).not.toHaveBeenCalled();
+    });
+});
