@@ -1,6 +1,6 @@
 import { NextFunction, Request, RequestHandler, Response } from 'express';
 
-const catchAsync =
+const wrapAsync =
     (requestHandler: RequestHandler): RequestHandler =>
     async (req: Request, res: Response, next: NextFunction) =>
         (requestHandler(req, res, next) as Promise<void>).catch(
@@ -9,4 +9,4 @@ const catchAsync =
             },
         );
 
-export default catchAsync;
+export default wrapAsync;
